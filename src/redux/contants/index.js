@@ -1,0 +1,7 @@
+export const STATUS_CODE = {
+  SUCCES: 200,
+  MODIFIED: 304,
+  CREATED: 201,
+  UPDATE: 202,
+  AU: 401,
+};

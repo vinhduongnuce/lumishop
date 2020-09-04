@@ -1,0 +1,12 @@
+{
+  "extends": "rallycoding",
+  "rules": {
+    "arrow-body-side": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}
