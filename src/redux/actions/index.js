@@ -5,6 +5,10 @@ export const addCart = (id, name, qty, price, image) => ({
   payload: {id, name, qty, price, image}
 });
 
+export const getCart = () => ({
+  type: types.GET_CART
+});
+
 export const updateCart = (id, qty) => ({
   type: types.UPDATE_CART,
   payload: {id,qty}

@@ -1,23 +1,33 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ItemCart from './ItemCart';
 import Footer from './Footer';
 
-const CartList = ({ carts, navigation }) => {
+const CartList = ({ carts, navigation, addCart, device, getCart, updateCart, deleteCart }) => {
+  useEffect(()=> {
+    device ? addCart(device.id, device.name, 1, device.price, device.image) : null;
+    getCart();
+
+  }, []);
+
   const textButton = 'THANH TOÁN';
   const textTitle = 'Tổng cộng';
   let total = 0;
   carts.forEach(element => {
     total += element.qty * element.price;
   });
+
   const renderItem = ({ item }) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('Detail', { id: item.id, name:item.name })} >
+        onPress={() => navigation.navigate('Detail', { id: item.id, name: item.name })} >
         <ItemCart
           item={item}
-          navigation={navigation} />
+          navigation={navigation}
+          updateCart={updateCart}
+          deleteCart={deleteCart}  
+        />
       </TouchableOpacity>
 
     );

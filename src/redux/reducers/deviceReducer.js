@@ -28,7 +28,6 @@ const deviceReducer = (state = INITIAL_STATE, action) => {
   case types.FETCH_DEVICES_DETAIL: 
     return state;
   case types.FETCH_DEVICES_DETAIL_SUCCESS:
-    console.log(action.payload.data);
     return {...state, resultDetail: action.payload.data};
   case types.FETCH_DEVICES_DETAIL_FAILED:
     return {...state, resultDetail: null};

@@ -9,7 +9,7 @@ const Footer = ({price, device, textButton, textTitle, navigation}) => {
         <Text style={styles.titlePrice}>{textTitle}</Text>
         <Text style={styles.price}>${price}</Text>
       </View>
-      { device ? <TouchableOpacity onPress={()=>navigation.navigate('Cart', {device:device, type: 'add'})}><View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View></TouchableOpacity> : <View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View>}
+      { device ? <TouchableOpacity onPress={()=>navigation.navigate('Cart', {device:device})}><View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View></TouchableOpacity> : <View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View>}
     </View>
   );};
 

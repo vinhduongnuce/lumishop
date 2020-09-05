@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import { getDetailDevice } from '../redux/actions';
+import { addCart, getCart, updateCart, deleteCart } from '../redux/actions';
 import CartList from '../components/CartList';
-
 
 const mapStateToProps = state => ({
   carts: state.carts
 });
 
 const mapDispatchToProps = {
-  getDetailDevice
+  addCart,
+  getCart,
+  updateCart,
+  deleteCart
 };
 
 

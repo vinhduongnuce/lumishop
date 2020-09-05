@@ -2,6 +2,7 @@ export const SEARCH_DEVICE = 'searh_device';
 export const GET_DEVICE_BY_CATEGORY = 'get_device_by_category';
 export const SEARCH_CHANGE = 'search_change';
 export const ADD_CART = 'add_cart';
+export const GET_CART = 'get_cart';
 export const UPDATE_CART = 'update_cart';
 export const DELETE_CART = 'delete_cart';
 export const DESTROY_CART = 'destroy_cart';

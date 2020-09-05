@@ -24,7 +24,6 @@ function* watchHomeDevices() {
 function* watchDetailDevices({payload}) {
   try {
     const resp = yield call(apifetchDeviceDetail, payload);
-    console.log('resp', resp);
     const { data, status } = resp;
     if (status === STATUS_CODE.SUCCES || status === STATUS_CODE.MODIFIED) {
       yield put(fetchDevices.fetchDetailDevicesSuccess(data));

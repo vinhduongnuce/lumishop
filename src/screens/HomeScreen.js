@@ -30,7 +30,6 @@ const HomeScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   devices: {
-    marginHorizontal: 10,
     flex: 1
   },
   deviceTitle: {
