@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   textTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+    paddingLeft: 13
   },
   textAll: {
     fontSize: 16,

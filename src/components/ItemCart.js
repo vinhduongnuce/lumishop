@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import {View, Text, StyleSheet, Image } from 'react-native'; 
+import {View, Text, StyleSheet } from 'react-native'; 
 import images from '../utils/image';
 import InputSpinner from 'react-native-input-spinner';
 import Swipeout from 'react-native-swipeout';
+import Image from 'react-native-remote-svg';  
 
 const ItemCart = ({ item, updateCart, deleteCart }) => {
   let imageRequire = null;
@@ -16,10 +18,18 @@ const ItemCart = ({ item, updateCart, deleteCart }) => {
     autoClose: true,
     right: [
       {
+        component: (
+          <View style={styles.iconDel}>
+            <Image
+              style={styles.icon}
+              source= {require('../assets/svg/bin.svg')}
+            />
+          </View>
+        ),
         onPress: () => {
           deleteCart(item.id);
         },
-        text: 'Delelte', type: 'delete' 
+        type: 'delete' 
       }
     ]
   };
@@ -55,7 +65,8 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
     height: 120,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: '#fff'
   },
   image: {
     width: 120,
@@ -73,6 +84,15 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 16,
     color: '#00C569'
+  },
+  iconDel: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center'
+  },
+  icon: {
+    width: 30,
+    height: 30
   }
 });
 

@@ -22,6 +22,7 @@ const DeviceList = ({devices, navigation, fetchDevices, id}) => {
   return (
     <View style={styles.container}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         data={devices}
         renderItem={renderItem}
         keyExtractor={item => item.id}
@@ -32,7 +33,8 @@ const DeviceList = ({devices, navigation, fetchDevices, id}) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    
   }
 });
 

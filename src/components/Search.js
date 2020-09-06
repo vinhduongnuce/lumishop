@@ -2,13 +2,13 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native'; 
-import Image from 'react-native-remote-svg';
+import Image from 'react-native-remote-svg';  
 const Search = ({navigation}) => (
   <View style={styles.container}>
     <View style={styles.search}>
       <Image 
         style={styles.iconSearch}
-        source= {require('../assets/svg/engine.svg')}
+        source= {require('../assets/svg/icons8-search.svg')}
       />
       <TextInput style={styles.input}/>
     </View>
