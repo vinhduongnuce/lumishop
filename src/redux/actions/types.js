@@ -1,3 +1,4 @@
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 export const SEARCH_DEVICE = 'searh_device';
 export const GET_DEVICE_BY_CATEGORY = 'get_device_by_category';
 export const SEARCH_CHANGE = 'search_change';
@@ -6,7 +7,6 @@ export const GET_CART = 'get_cart';
 export const UPDATE_CART = 'update_cart';
 export const DELETE_CART = 'delete_cart';
 export const DESTROY_CART = 'destroy_cart';
-export const GET_DETAIL_DEVICE = 'get_detail_device';
 
 
 // devices

@@ -1,15 +1,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'; 
+import AppText from '../containers/AppText';
 
-const Footer = ({price, device, textButton, textTitle, navigation}) => {
+const Footer = ({price, device, type, navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.priceBox}>
-        <Text style={styles.titlePrice}>{textTitle}</Text>
+        {type==='add' ? <AppText style={styles.titlePrice} i18nKey={'item-price'}></AppText>: null}
+        {type==='cart' ? <AppText style={styles.titlePrice} i18nKey={'total-cart'}></AppText>: null}
         <Text style={styles.price}>${price}</Text>
       </View>
-      { device ? <TouchableOpacity onPress={()=>navigation.navigate('Cart', {device:device})}><View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View></TouchableOpacity> : <View style={styles.buttonBox}><Text style={styles.titleButton}>{textButton}</Text></View>}
+      <TouchableOpacity 
+        onPress={device ? ()=>navigation.navigate('Cart', {device:device}): null}>
+        <View style={styles.buttonBox}>
+          {type==='add' ? <AppText style={styles.titleButton} i18nKey={'add-to-cart'}></AppText>: null}
+          {type==='cart' ? <AppText style={styles.titleButton} i18nKey={'purchase-cart'}></AppText>: null}
+        </View>
+      </TouchableOpacity>
     </View>
   );};
 

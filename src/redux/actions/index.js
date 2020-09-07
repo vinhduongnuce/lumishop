@@ -35,5 +35,12 @@ export const searchDevice = name => ({
 });
 
 
+export const changeLanguage = language => {
+  return {
+    type: types.CHANGE_LANGUAGE,
+    payload: language
+  };
+};
+
 
 

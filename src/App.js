@@ -2,9 +2,8 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {createAppContainer} from 'react-navigation';
-import {ScrollView} from 'react-native';
 import {createStackNavigator} from 'react-navigation-stack';
-import { createDrawerNavigator, DrawerNavigatorItems } from 'react-navigation-drawer';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -12,6 +11,7 @@ import DetailScreen from './screens/DetailScreen';
 import SearchScreen from './screens/SearchScreen';
 import DeviceListScreen from './screens/DeviceListScreen';
 import CategoryDetailScreen from './screens/CategoryDetailScreen';
+import SideBar from './containers/SideBar';
 
 import configureStore from './redux/config';
 const store = configureStore();
@@ -46,12 +46,6 @@ const navigator = createStackNavigator({
 });
 
 const AppDrawer = createDrawerNavigator({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions:{
-      drawerLabel:'Trang chủ'
-    }
-  },
   Cart:{
     screen: CartScreen,
     navigationOptions:{
@@ -66,13 +60,8 @@ const AppDrawer = createDrawerNavigator({
   },
 },
 {
-  initialRouteName:'Home',  
-  contentComponent: (props) => {
-    return(
-      <ScrollView>
-        <DrawerNavigatorItems {...props}></DrawerNavigatorItems>
-      </ScrollView>
-    );} ,
+  initialRouteName:'ChangeLanguage',
+  contentComponent: props=> <SideBar {...props}/>
 }
 );
 

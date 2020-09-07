@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import DeviceList from '../containers/DeviceList';
-
-const text = 'Thiết bị điện thông minh của Lumi được sản xuất theo tiêu chuẩn Châu Âu CE và RoHS, hướng tới sự sang trọng, cao cấp và bền bỉ.';
+import AppText from '../containers/AppText';
 
 const DeviceListScreen = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.box}>
-        <Text style={styles.title}>{text}</Text>
+        <AppText style={styles.title} i18nKey={'info-device-lumi'}></AppText>
       </View>
       <DeviceList navigation={navigation}/>
     </ScrollView>

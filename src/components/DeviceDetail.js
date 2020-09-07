@@ -8,8 +8,6 @@ const DeviceDetail = ({device, navigation, id, fetchDetailDevices}) => {
   useEffect(()=> {
     fetchDetailDevices(id);
   });
-  const textButton = 'THÊM';
-  const textTitle = 'Giá';
 
   if (!device) return null;
   let imageRequire = null;
@@ -27,7 +25,7 @@ const DeviceDetail = ({device, navigation, id, fetchDetailDevices}) => {
         />
         <Text>{device.name}</Text>
       </ScrollView>
-      <Footer textButton={textButton} textTitle={textTitle} price={device.price} device={device} navigation={navigation}/>
+      <Footer type={'add'} price={device.price} device={device} navigation={navigation}/>
     </>
   );};
 

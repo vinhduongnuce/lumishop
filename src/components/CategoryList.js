@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
-import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import ItemCategory from './ItemCategory';
+import AppText from '../containers/AppText';
 
 const CategoryList = ({categories, navigation, fetchCategories}) => {
   useEffect(()=>{
@@ -16,7 +17,7 @@ const CategoryList = ({categories, navigation, fetchCategories}) => {
   );
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Danh mục</Text>
+      <AppText style={styles.title} i18nKey={'title-categories'}></AppText>
       <FlatList 
         horizontal
         showsHorizontalScrollIndicator={false}

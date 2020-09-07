@@ -10,9 +10,6 @@ const CartList = ({ carts, navigation, addCart, device, getCart, updateCart, del
     getCart();
 
   }, []);
-
-  const textButton = 'THANH TOÁN';
-  const textTitle = 'Tổng cộng';
   let total = 0;
   carts.forEach(element => {
     total += element.qty * element.price;
@@ -41,7 +38,7 @@ const CartList = ({ carts, navigation, addCart, device, getCart, updateCart, del
         numColumns={1}
         style={styles.contentCart}
       />
-      <Footer textButton={textButton} textTitle={textTitle} price={total} navigation={navigation} />
+      <Footer type={'cart'} price={total} navigation={navigation} />
     </View>
   );
 };

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import DeviceHome from '../containers/DeviceHome';
 import CategoryList from '../containers/CategoryList';
 import Search from '../components/Search';
+import AppText from '../containers/AppText';
 
 const HomeScreen = ({navigation}) => {
   
@@ -14,11 +15,11 @@ const HomeScreen = ({navigation}) => {
         <CategoryList navigation={navigation}/>
         <View style={styles.devices}>
           <View style={styles.deviceTitle}>
-            <Text style={styles.textTitle}>Thiết bị</Text>
+            <AppText style={styles.textTitle} i18nKey={'title-device'}></AppText>
             <TouchableOpacity
               onPress={()=>navigation.navigate('Device')}
             >
-              <Text style={styles.textAll}>Xem tất cả</Text>
+              <AppText style={styles.textAll} i18nKey={'see-all-devices'}></AppText>
             </TouchableOpacity>
           </View>
           <DeviceHome navigation={navigation}/>
