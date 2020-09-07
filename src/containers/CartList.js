@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addCart, getCart, updateCart, deleteCart } from '../redux/actions';
+import { addCart, updateCart, deleteCart } from '../redux/actions';
 import CartList from '../components/CartList';
 
 const mapStateToProps = state => ({
@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addCart,
-  getCart,
   updateCart,
   deleteCart
 };

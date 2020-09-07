@@ -5,6 +5,7 @@ export const fetchCategories = () => {
     type: types.FETCH_CATEGORIES,
   };
 };
+
 export const fetchCategoriesSuccess = (data) => {
   return {
     type: types.FETCH_CATEGORIES_SUCCESS,
@@ -13,6 +14,7 @@ export const fetchCategoriesSuccess = (data) => {
     },
   };
 };
+
 export const fetchCategoriesFailed = (error) => {
   return {
     type: types.FETCH_CATEGORIES_FAILED,

@@ -1,27 +1,34 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { useState } from 'react';
 import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native'; 
 import Image from 'react-native-remote-svg';  
-const Search = ({navigation}) => (
-  <View style={styles.container}>
-    <View style={styles.search}>
-      <Image 
-        style={styles.iconSearch}
-        source= {require('../assets/svg/icons8-search.svg')}
-      />
-      <TextInput style={styles.input}/>
+const Search = ({navigation}) => {
+  const [search, setSearch] = useState('');
+  return(
+    <View style={styles.container}>
+      <View style={styles.search}>
+        <TouchableOpacity
+          style={styles.iconSearch}
+          onPress={()=>navigation.navigate('Search', {search: search})}>
+          <Image
+            source= {require('../assets/svg/icons8-search.svg')}
+          />
+        </TouchableOpacity>
+        <TextInput 
+          style={styles.input}
+          onChangeText={text => setSearch(text)}/>
+      </View>
+      <TouchableOpacity
+        style={styles.boxCart}
+        onPress={()=>navigation.navigate('Cart')} >
+        <Image
+          style={styles.iconCart}
+          source={require('../assets/svg/shopping-cart.svg')}
+        />
+      </TouchableOpacity>
     </View>
-    <TouchableOpacity
-      style={styles.boxCart}
-      onPress={()=>navigation.navigate('Cart')} >
-      <Image
-        style={styles.iconCart}
-        source={require('../assets/svg/shopping-cart.svg')}
-      />
-    </TouchableOpacity>
-  </View>
-);
+  );};
 
 const styles = StyleSheet.create({
   container: {
@@ -32,17 +39,17 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    right: 150
   },
   search: {
     flex: 1,
     flexDirection: 'row',
     borderRadius: 30,
-    backgroundColor: '#F7F7F7'
+    backgroundColor: '#F7F7F7',
+    marginRight: 15
   },
   iconSearch: {
-    padding: 8,
-    right: 35
+    paddingVertical: 8,
+    paddingHorizontal: 16
   },
   iconCart: {
     width: 40,

@@ -19,12 +19,14 @@ const navigator = createStackNavigator({
   Home:{
     screen: HomeScreen,
     navigationOptions: () => ({
+      headerTitleStyle: { alignSelf: 'center' },
       title: 'LUMISHOP'
     })
   },
   Device:{
     screen: DeviceListScreen,
     navigationOptions: () => ({
+      headerTitleStyle: { alignSelf: 'center' },
       title: 'Thiết bị điện Lumi'
     })    
   },
@@ -34,14 +36,21 @@ const navigator = createStackNavigator({
   Cart:{
     screen: CartScreen,   
     navigationOptions: () => ({
+      headerTitleStyle: { alignSelf: 'center' },
       title: 'Giỏ hàng'
     }) 
   },
   Search:{
-    screen: SearchScreen,      
+    screen: SearchScreen,
+    navigationOptions: () => ({
+      headerTitleStyle: { alignSelf: 'center' },
+    })   
   },
   CategoryDetail:{
-    screen: CategoryDetailScreen,   
+    screen: CategoryDetailScreen,
+    navigationOptions: () => ({
+      headerTitleStyle: { alignSelf: 'center' },
+    }) 
   }
 });
 

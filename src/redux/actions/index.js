@@ -23,18 +23,6 @@ export const destroyCart = () => ({
   type: types.DESTROY_CART
 });
 
-
-export const searchChange = name => ({
-  type: types.SEARCH_CHANGE,
-  payload: name
-});
-
-export const searchDevice = name => ({
-  type: types.SEARCH_DEVICE,
-  payload: name
-});
-
-
 export const changeLanguage = language => {
   return {
     type: types.CHANGE_LANGUAGE,

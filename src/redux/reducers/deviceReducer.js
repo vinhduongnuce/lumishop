@@ -39,11 +39,13 @@ const deviceReducer = (state = INITIAL_STATE, action) => {
   case types.FETCH_DEVICES_BY_CATEGORY_FAILED:
     return {...state, resultsSearch: []};
 
+  case types.FETCH_DEVICES_SEARCH: 
+    return state;
+  case types.FETCH_DEVICES_SEARCH_SUCCESS:
+    return {...state, resultsSearch: action.payload.data};
+  case types.FETCH_DEVICES_SEARCH_FAILED:
+    return {...state, resultsSearch: []};
   
-  case types.SEARCH_CHANGE:
-    return {...state, search: action.payload.trim()};
-  case types.SEARCH_DEVICE:
-    return state.list.filter(devices => devices.name.includes(state.search));
   default:
     return state;
   }

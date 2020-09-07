@@ -1,5 +1,5 @@
 import axiosService from '../axoisService';
-const _BASEURL = 'https://6dad382dd123.ngrok.io';
+const _BASEURL = 'https://75e3d7309707.ngrok.io';
 
 export const apifetchDevice = () => {
   return axiosService.get(`${_BASEURL}/devices`);
@@ -15,4 +15,8 @@ export const apifetchDeviceByCategory = (id) => {
 
 export const apifetchCategory = () => {
   return axiosService.get(`${_BASEURL}/categories`);
+};
+
+export const apifetchDeviceSearch = (name) => {
+  return axiosService.get(`${_BASEURL}/devices/search?name=${name}`);
 };

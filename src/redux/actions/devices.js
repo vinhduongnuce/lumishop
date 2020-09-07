@@ -89,3 +89,26 @@ export const fetchDevicesByCategoryFailed = (error) => {
     },
   };
 };
+
+export const fetchDevicesSearch = (name) => {
+  return {
+    type: types.FETCH_DEVICES_SEARCH,
+    payload: name
+  };
+};
+export const fetchDevicesSearchSuccess = (data) => {
+  return {
+    type: types.FETCH_DEVICES_SEARCH_SUCCESS,
+    payload: {
+      data,
+    },
+  };
+};
+export const fetchDevicesSearchFailed = (error) => {
+  return {
+    type: types.FETCH_DEVICES_SEARCH_FAILED,
+    payload: {
+      error,
+    },
+  };
+};

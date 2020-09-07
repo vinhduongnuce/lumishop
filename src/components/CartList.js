@@ -4,10 +4,9 @@ import { View, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import ItemCart from './ItemCart';
 import Footer from './Footer';
 
-const CartList = ({ carts, navigation, addCart, device, getCart, updateCart, deleteCart }) => {
+const CartList = ({ carts, navigation, addCart, device, updateCart, deleteCart }) => {
   useEffect(()=> {
     device ? addCart(device.id, device.name, 1, device.price, device.image) : null;
-    getCart();
 
   }, []);
   let total = 0;

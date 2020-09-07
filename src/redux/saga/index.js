@@ -2,7 +2,7 @@
 
 import {call,put,takeLatest} from 'redux-saga/effects';
 import { STATUS_CODE } from '../contants';
-import { apifetchDevice, apifetchCategory, apifetchDeviceDetail, apifetchDeviceByCategory } from '../../apis';
+import { apifetchDevice, apifetchCategory, apifetchDeviceDetail, apifetchDeviceByCategory, apifetchDeviceSearch } from '../../apis';
 import * as fetchDevices from '../actions/devices';
 import { fetchCategoriesSuccess, fetchCategoriesFailed } from '../actions/categories';
 import * as types from './../actions/types';
@@ -69,6 +69,23 @@ function* watchListDevicesByCategory({payload}) {
   }
 }
 
+function* watchListDevicesSearch({payload}) {
+  try {
+    const resp = yield call(apifetchDeviceSearch, payload);
+    const { data, status } = resp;
+    if (status === STATUS_CODE.SUCCES || status === STATUS_CODE.MODIFIED) {
+      yield put(fetchDevices.fetchDevicesSearchSuccess(data));
+    } else {
+      yield put(fetchDevices.fetchDevicesSearchFailed(data));
+    }
+  } catch (error) {
+    console.log(error);
+    console.log('lỗi không load được dữ liệu!');
+  } finally {
+
+  }
+}
+
 function* watchListCategories() {
   try {
     const resp = yield call(apifetchCategory);
@@ -93,6 +110,7 @@ function* rootSaga() {
   yield takeLatest(types.FETCH_CATEGORIES, watchListCategories);
   yield takeLatest(types.FETCH_DEVICES_DETAIL, watchDetailDevices);
   yield takeLatest(types.FETCH_DEVICES_BY_CATEGORY, watchListDevicesByCategory);
+  yield takeLatest(types.FETCH_DEVICES_SEARCH, watchListDevicesSearch);
 }
 export default rootSaga;
 // B1:thực thi action fetchListTask
