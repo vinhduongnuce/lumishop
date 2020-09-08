@@ -1,6 +1,6 @@
 import * as types from '../actions/types';
 
-var INITIAL_STATE = {
+const INITIAL_STATE = {
   language: 'en'
 };
 

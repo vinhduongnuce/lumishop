@@ -6,7 +6,6 @@ import Image from 'react-native-remote-svg';
 import DeviceDetail from '../containers/DeviceDetail';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 
-
 const DetailScreen = ({navigation}) => {
   DetailScreen.navigationOptions = {
     title: navigation.getParam('name'),

@@ -1,5 +1,5 @@
 import axiosService from '../axoisService';
-const _BASEURL = 'https://75e3d7309707.ngrok.io';
+const _BASEURL = 'https://10e6e8b6c0e9.ngrok.io';
 
 export const apifetchDevice = () => {
   return axiosService.get(`${_BASEURL}/devices`);

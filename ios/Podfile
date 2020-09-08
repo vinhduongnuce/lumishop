@@ -12,6 +12,8 @@ target 'lumishop' do
 
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
+  pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
+
   target 'lumishopTests' do
     inherit! :complete
     # Pods for testing

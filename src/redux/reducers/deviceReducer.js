@@ -3,7 +3,6 @@ import * as types from '../actions/types';
 const INITIAL_STATE = {
   list:[],
   home: [],
-  search: '',
   resultsSearch: [],
   resultDetail: null
 };
